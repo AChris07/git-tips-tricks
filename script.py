@@ -1,4 +1,5 @@
 import sys
+import subprocess
 from datetime import datetime
 
 if __name__ == '__main__':
@@ -6,3 +7,4 @@ if __name__ == '__main__':
     print('More changes!')
     print('Current time: {0}'.format(datetime.now()))
     print('My name is: {0}'.format(name) if name else 'I don\'t know your name')
+    print('Current branch is {0}'.format(subprocess.check_output(['git', 'symbolic-ref', 'HEAD', '--short']).decode('UTF-8')))
